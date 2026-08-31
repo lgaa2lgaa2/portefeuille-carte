@@ -5,7 +5,7 @@
         android:fullBackupContent="false"
         android:icon="@drawable/portefeuille_logo"
         android:roundIcon="@drawable/portefeuille_logo"
-        android:label="PORTEFEUILLE CARTE"
+        android:label="PAULO PORTE CARTE"
         android:supportsRtl="true"
         android:theme="@style/Theme.PortefeuilleCarte">
         <activity android:name=".MainActivity" android:exported="true">
