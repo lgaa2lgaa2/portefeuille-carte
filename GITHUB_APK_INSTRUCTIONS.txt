@@ -1,0 +1,18 @@
+PORTEFEUILLE CARTE — GitHub Actions
+
+Ce projet contient maintenant la compilation automatique APK.
+
+UTILISATION
+1. Crée un nouveau dépôt GitHub, par exemple : portefeuille-carte
+2. Envoie TOUT le contenu de ce dossier dans le dépôt.
+3. Ouvre l'onglet Actions du dépôt.
+4. Sélectionne « Build Android APK ».
+5. Clique « Run workflow ».
+6. Quand la compilation est terminée, ouvre le résultat.
+7. Dans Artifacts, télécharge « PORTEFEUILLE-CARTE-APK ».
+8. Décompresse-le : tu obtiens PORTEFEUILLE-CARTE.apk.
+
+Le workflow se trouve ici :
+.github/workflows/build-apk.yml
+
+Il compile aussi automatiquement à chaque push sur main/master.
