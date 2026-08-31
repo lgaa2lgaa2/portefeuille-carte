@@ -22,5 +22,24 @@ object WalletUiLogic {
         }
     }
 
+    fun recognizeMerchantFromText(text: String): String {
+        val n = text.lowercase()
+            .replace("é", "e")
+            .replace("è", "e")
+            .replace("ê", "e")
+            .replace("à", "a")
+            .replace("ç", "c")
+        return when {
+            n.contains("carrefour") -> "Carrefour"
+            n.contains("super u") || n.contains("carte u") -> "Super U"
+            n.contains("e.leclerc") || n.contains("e leclerc") || n.contains("leclerc") -> "E.Leclerc"
+            n.contains("intermarche") || n.contains("mousquetaires") -> "Intermarché"
+            n.contains("auchan") -> "Auchan"
+            n.contains("lidl") -> "Lidl"
+            n.contains("aldi") -> "Aldi"
+            else -> ""
+        }
+    }
+
     fun isValidWebUrl(url: String): Boolean = url.startsWith("https://") || url.startsWith("http://")
 }
