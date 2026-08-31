@@ -23,4 +23,12 @@ class WalletUiLogicTest {
         assertFalse(WalletUiLogic.isValidWebUrl("javascript:alert(1)"))
         assertFalse(WalletUiLogic.isValidWebUrl("example.com"))
     }
+
+    @Test fun recognizesMerchantFromScannedCardText() {
+        assertEquals("Carrefour", WalletUiLogic.recognizeMerchantFromText("CARREFOUR Bonus fidélité 2026"))
+        assertEquals("Super U", WalletUiLogic.recognizeMerchantFromText("Carte U - SUPER U La Flèche"))
+        assertEquals("E.Leclerc", WalletUiLogic.recognizeMerchantFromText("E.LECLERC carte de fidélité"))
+        assertEquals("Intermarché", WalletUiLogic.recognizeMerchantFromText("INTERMARCHE mousquetaires"))
+        assertEquals("", WalletUiLogic.recognizeMerchantFromText("1234567890"))
+    }
 }
